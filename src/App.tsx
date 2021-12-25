@@ -17,6 +17,7 @@ function App() {
     <Row title="Horror Movies" fetchUrl={requests.feactHorrorMovies} />
     <Row title="Romance Movies" fetchUrl={requests.feactRomanceMovies} />
     <Row title="DOcumentaries" fetchUrl={requests.feactDocumentMovies} />
+    <h1>aaa</h1>
 </div>
   );
 }
