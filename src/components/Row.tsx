@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import YouTube from "react-youtube";
+import "../Row.css";
 
 const base_url = "https://image.tmdb.org/t/p/original";
+
 
 type Props = {
   title: string;
@@ -18,9 +21,19 @@ type Movie = {
   backdrop_path: string;
 };
 
+//trailerのoption
+type Options = {
+  height: string;
+  width: string;
+  playerVars: {
+    autoplay: 0 | 1 | undefined;
+  };
+};
+
 
 export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [trailerUrl, setTrailerUrl] = useState<string | null>("");
 
   useEffect(() => {
     async function fetchData() {
@@ -31,9 +44,16 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(movies);
+    const opts: Options = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https:developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
 
-   return (
+  return (
     <div className="Row">
       <h2>{title}</h2>
       <div className="Row-posters">
