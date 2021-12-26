@@ -8,16 +8,15 @@ function App() {
   <div className="App">
     <Row
       title="NETFLIX ORIGUINALS"
-      fetchUrl={requests.feachNetflixOriginals}
+      fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feachNetflixOriginals}`}
       isLargeRow
     />
-    <Row title="Top Rated" fetchUrl={requests.feactTopRated} />
-    <Row title="Action Movies" fetchUrl={requests.feactActionMovies} />
-    <Row title="Comedy Movies" fetchUrl={requests.feactComedyMovies} />
-    <Row title="Horror Movies" fetchUrl={requests.feactHorrorMovies} />
-    <Row title="Romance Movies" fetchUrl={requests.feactRomanceMovies} />
-    <Row title="DOcumentaries" fetchUrl={requests.feactDocumentMovies} />
-    <h1>aaa</h1>
+    <Row title="Top Rated" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactTopRated}`} />
+    {/* <Row title="Action Movies" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactActionMovies}`} /> */}
+    <Row title="Comedy Movies" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactComedyMovies}`} />
+    {/* <Row title="Horror Movies" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactHorrorMovies}`} /> */}
+    <Row title="Romance Movies" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactRomanceMovies}`} />
+    <Row title="DOcumentaries" fetchUrl={`${`https://api.themoviedb.org/3`}${requests.feactDocumentMovies}`} />
 </div>
   );
 }
